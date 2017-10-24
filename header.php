@@ -6,12 +6,17 @@ and open the template in the editor.
 -->
 <html>
     <head>
+        <title>
+        <?php if( !is_home() ){ wp_title(' - ', true, 'right'); } ?>
+        <?php bloginfo('name'); ?>
+        </title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <!-- links for css-->
         <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" /><!-- style.css を 読み込む-->
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/header.css" type="text/css" />
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/main.css" type="text/css" />
         
         <!-- links for javascript -->
         <script src="javascript/main.js" type="text/javascript"></script>
@@ -31,7 +36,7 @@ and open the template in the editor.
             <div class="miniHeader__cacLogo"> <a href="<?php echo home_url(); ?>"></a></div>
             <div style="text-align: right; margin-right: 30px" >
                 <a href="<?php echo home_url(); ?>" class="miniHeader__Link">ホーム</a>
-                <a href="./html/about.html" class="miniHeader__Link">弊団体について</a>
+                <a href="./page-about.php" class="miniHeader__Link">弊団体について</a>
                 <a href="./html/project.html" class="miniHeader__Link">プロジェクト</a>
                 <a href="./html/announce.html" class="miniHeader__Link">告知</a>
                 <a href="./html/diary.html" class="miniHeader__Link">ダイアリー</a>
@@ -44,7 +49,7 @@ and open the template in the editor.
             <div class="header__cacLogo"></div>
             <div style="width: 100%; text-align: center;" >
                 <a href="<?php echo home_url(); ?>" class="header__Link">ホーム</a>
-                <a href="./html/about.html" class="header__Link">弊団体について</a>
+                <a href="./page-about.php" class="header__Link">弊団体について</a>
                 <a href="./html/project.html" class="header__Link">プロジェクト</a>
                 <a href="./html/announce.html" class="header__Link">告知</a>
                 <a href="./html/diary.html" class="header__Link">ダイアリー</a>

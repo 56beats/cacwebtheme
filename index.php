@@ -1,35 +1,4 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>
-        <?php if( !is_home() ){ wp_title(' - ', true, 'right'); } ?>
-        <?php bloginfo('name'); ?>
-        </title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <!-- links for css-->
-        <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" /><!-- style.css を 読み込む-->
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/main.css" type="text/css" />
-        
-        <!-- links for javascript -->
-        <script src="javascript/main.js" type="text/javascript"></script>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-        <script src="javascript/jquery.easing.1.3.js" type="text/javascript"></script>
-        <script src="javascript/jqueryColorPlugin.js" type="text/javascript"></script>
-        
-        <!-- import fonts -->
-        <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet"> 
-    </head>
-	<body>
-		<?php get_header(); ?>
+<?php get_header(); ?>
 
 	<div class="mainTitle">
             <div class="mainTitle__titleEnglish">Beyond your Creation</div>
@@ -103,6 +72,4 @@ and open the template in the editor.
             </div>
             
         </div>
-		<?php get_footer(); ?>
-	</body>
-</html>
+<?php get_footer(); ?>
