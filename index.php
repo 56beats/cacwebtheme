@@ -79,7 +79,7 @@ and open the template in the editor.
                 <div class="mainDiary__diary--contents">
                     <div class="mainDiary__diary--logo">
                     	<?php if ( has_post_thumbnail() ): ?>
-                    		<?php the_post_thumbnail('thumbnail'); ?>
+                    		<?php the_post_thumbnail(array(100,100)); ?>
                     	<?php else: ?>
                     		No Image
                     	<?php endif; ?>
