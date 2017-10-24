@@ -6,7 +6,10 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title><?php wp_title('',true,''); ?></title>
+        <title>
+        <?php if( !is_home() ){ wp_title(' - ', true, 'right'); } ?>
+        <?php bloginfo('name'); ?>
+        </title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -65,31 +68,34 @@ and open the template in the editor.
                 </div>
             </div>
         </div>
-        
         <div class="mainDiary">
             <div class="mainDiary__separater"></div>
+            <!-- start post loop -->
             <div class="mainDiary__diary">
-                <div class="mainDiary__title">Diary</div>
+            	<div class="mainDiary__title">Diary</div>
+            	<?php 
+        		if( have_posts() ) :
+        			while( have_posts() ) : the_post(); ?>
                 <div class="mainDiary__diary--contents">
-                    <div class="mainDiary__diary--logo">a</div>
-                    <div class="mainDiary__diary--title">タイトル</div>
-                    <div class="mainDiary__diary--sentence">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
+                    <div class="mainDiary__diary--logo">
+                    	<?php if ( has_post_thumbnail() ): ?>
+                    		<?php the_post_thumbnail('thumbnail'); ?>
+                    	<?php else: ?>
+                    		No Image
+                    	<?php endif; ?>
+                    </div>
+                    <div class="mainDiary__diary--title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
+                    <div class="mainDiary__diary--sentence">
+                    	<?php the_excerpt(); ?>
+                    </div>
                     <div class="mainDiary__diary--separator"></div>
                 </div>
-                <div class="mainDiary__diary--contents">
-                    <div class="mainDiary__diary--logo">a</div>
-                    <div class="mainDiary__diary--title">タイトル</div>
-                    <div class="mainDiary__diary--sentence">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
-                    <div class="mainDiary__diary--separator"></div>
-                </div>
-                <div class="mainDiary__diary--contents">
-                    <div class="mainDiary__diary--logo">a</div>
-                    <div class="mainDiary__diary--title">タイトル</div>
-                    <div class="mainDiary__diary--sentence">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
-                </div>
-                
+          		<?php 
+        			endwhile;
+        		endif; ?>
                 <div class="mainDiary__moreButton">more</div>
             </div>
+            <!-- end post loop -->
             <div class="mainDiary__twitter">
                 <div class="mainDiary__title">Twitter</div>
                 
@@ -97,6 +103,6 @@ and open the template in the editor.
             </div>
             
         </div>
-	<?php get_footer(); ?>
+		<?php get_footer(); ?>
 	</body>
 </html>
