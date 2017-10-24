@@ -6,7 +6,6 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>C.A.C. | 京都産業大学 文化団体連盟所属 電子計算機応用部</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,15 +23,14 @@ and open the template in the editor.
         <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
-        
-        
+        <?php wp_head(); ?>
     </head>
     <body>
         <!-- start header -->
         <div class="miniHeader">
-            <div class="miniHeader__cacLogo" style="cursor: pointer;" onclick="location.href = './index.php';"></div>
+            <div class="miniHeader__cacLogo"> <a href="<?php echo home_url(); ?>"></a></div>
             <div style="text-align: right; margin-right: 30px" >
-                <a href="./index.php" class="miniHeader__Link">ホーム</a>
+                <a href="<?php echo home_url(); ?>" class="miniHeader__Link">ホーム</a>
                 <a href="./html/about.html" class="miniHeader__Link">弊団体について</a>
                 <a href="./html/project.html" class="miniHeader__Link">プロジェクト</a>
                 <a href="./html/announce.html" class="miniHeader__Link">告知</a>
@@ -45,7 +43,7 @@ and open the template in the editor.
             <div class="header__cacDiscription">京都産業大学　文化団体連盟　電子計算機応用部</div>
             <div class="header__cacLogo"></div>
             <div style="width: 100%; text-align: center;" >
-                <a href="./index.php" class="header__Link">ホーム</a>
+                <a href="<?php echo home_url(); ?>" class="header__Link">ホーム</a>
                 <a href="./html/about.html" class="header__Link">弊団体について</a>
                 <a href="./html/project.html" class="header__Link">プロジェクト</a>
                 <a href="./html/announce.html" class="header__Link">告知</a>
